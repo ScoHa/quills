@@ -1,0 +1,38 @@
+.container-fluid {
+	background-color: #4c2877;
+	height: 100vh;
+	color: #E2E6EA;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*.text-input {
+	width: 250px;
+}*/
+
+#icons {
+	margin-top: 5px;
+}
+
+#copy-to-clipboard{
+	margin-right: 5px;
+}
+
+#icons:hover {
+	cursor: pointer;
+}
+
+.copyable:hover {
+	font-weight: bold;
+}
+
+#copy-to-clipboard:active, #clear:active {
+	transform: translateY(4px);
+}
+
+#underneath {
+	display: flex;
+	justify-content: space-between;
+}

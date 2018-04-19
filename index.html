@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Quills // A Minecraft Book Writing Tool</title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/quills.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Meta tag for mobile usability -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Font Awesome CDN -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg" id="header">
+				<h1>Quills</h1>
+			</div>
+		</div>
+		<div class="row" id="page1">
+			<form>
+				<div class="form-group" id="book-text">
+					<label for="text-input">Page 1</label>
+					<textarea class="form-control text-input" placeholder="Type your book text here!" id="text-input" rows="14" cols="30"></textarea>
+					<div id="underneath">
+						<div id="charcount"></div>
+						<div id="icons">
+							<i class="far fa-copy fa-lg" id="copy-to-clipboard" title="Copy text to clipboard"></i><i class="far fa-trash-alt fa-lg" id="clear" title="Clear this page"></i>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="row" id="button-row">
+			<button type="button" class="btn btn-light" id="submit">Paginate!</button>
+		</div>
+		<div class="row">
+			<div class="col-lg" id="paginated-text">
+				<!-- Paginated text goes here -->
+			</div>
+		</div>
+	</div>
+
+	<!-- JS for Boostrap -->
+	<!-- Consider downloading files for offline use -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- Custom JS -->
+	<script type="text/javascript" src="js/quills.js"></script>
+</body>
+</html>
+
+<!-- 
+
+Objectives for this site:
+
+Starts as a single text-box, max size of 14 lines. This represents a single page of a MC book.
+Once the textbox fills up, input for that box stops and a new box is formed next to it. Text that was too long to fit on a line wraps around to the next line, if at end of page wraps to next page. 
+Pages can be no longer than 14 lines. As for width, I'll have to to some experimenting to determine the proper cutoff, since MCWiki says "each line can have an average of 19 characters, determined by the width of the used characters". This will be annoying and difficult but if I can pull it off sufficiently it will make copy-and-pasting into MC books much easier, since text will only paste if the clipboard can fit on a single page. Wrapping is not supported by the game. 
+
+-->
