@@ -45,8 +45,8 @@ function paginate(text) {
 	let para = 1;
 	//text substr from beginning of text for 254 characters
 	while (char < text.length) {
-		let textInput = text.substr(char, 254);
-		char += 254;
+		let textInput = text.substr(char, 255);
+		char += 255;
 		let output = "<p class='copyable' id='para" + para + "'>" + textInput + "</p>";
 		para++;
 		$('#paginated-text').append(output);
@@ -73,7 +73,6 @@ $(document).ready(function() {
 		$('#charcount').html(textLength + lineBreaks + '/255');
 	});
 
-	
 });
 
 copyToClipboard();
