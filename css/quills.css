@@ -1,6 +1,7 @@
 .container-fluid {
 	background-color: #4c2877;
-	height: 100vh;
+	height: 100%;
+	min-height: 100vh;
 	color: #E2E6EA;
 	display: flex;
 	justify-content: center;
