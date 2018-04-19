@@ -16,12 +16,14 @@ function copyToClipboard() {
 	});
 }
 
-// Enables button to clear current page of text
+// Enables button to clear current page of text and reset page
 function clearTextInput() {
 	$('#clear').click(function() {
 		$('#text-input').focus();
 		$('#text-input').select().val('');
 		$('#charcount').html('0/255');
+		$('.copyable').remove();
+		$('input').remove();
 	});
 }
 
