@@ -14,7 +14,7 @@ function copyToClipboard() {
 		$('#text-input').select();
 		document.execCommand('copy');
 	});
-};
+}
 
 // Enables button to clear current page of text
 function clearTextInput() {
@@ -23,7 +23,7 @@ function clearTextInput() {
 		$('#text-input').select().val('');
 		$('#charcount').html('0/255');
 	});
-};
+}
 
 // Copy paginated text on mouseover
 function copyPaginatedText() {
@@ -33,7 +33,7 @@ function copyPaginatedText() {
 		var idText = $('#' + id).text();
 		alert(idText)
 		// document.execCommand('copy');
-	})
+	});
 }
 
 
