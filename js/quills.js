@@ -36,8 +36,6 @@ function copyPaginatedText() {
 	});
 }
 
-
-
 // Paginate entered text and paste it underneath the textarea, with appropriately-sized areas highlighted on mouseover with the ability to copy to clipboard by a click
 function paginate(text) {
 	// Divide text using substr() method
@@ -55,9 +53,6 @@ function paginate(text) {
 	}
 
 	copyPaginatedText();
-	//save that to a var
-	//append that text to page in a div to allow for interaction
-	//repeat until all text is accounted for (loop)
 }
 
 // Click event for submit button
@@ -65,14 +60,6 @@ $('#submit').on('click', function(event) {
 	var text = $('#text-input').val();
 	paginate(text);
 });
-
-// Enter key triggers pagination in addition to button click
-// $(".text-input").keypress(function(event) {
-// 	if (event.which == 13) {
-// 		var text = $('#text-input').val();
-//     	paginate(text);
-//   	};
-// });
 
 // Character count
 $(document).ready(function() {
@@ -88,13 +75,6 @@ $(document).ready(function() {
 
 	
 });
-
-
-// $('#para1').on('click', function() {
-// 	var textID = $(this).attr("id");
-// 	// var idText = $('#' + id).text();
-// 	alert(textID);
-// });
 
 copyToClipboard();
 clearTextInput();
