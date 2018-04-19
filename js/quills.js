@@ -67,13 +67,13 @@ $('#submit').on('click', function(event) {
 // Character count
 $(document).ready(function() {
 	var textMax = 255;
-	$('#charcount').html('0/255');
+	$('#charcount').html('Pages: 1');
 
 	$('#text-input').keyup(function() {
 		var text = $('#text-input').val();
 		var textLength = $('#text-input').val().length;
 		var lineBreaks = (text.match(/\r|\n/g)||[]).length;
-		$('#charcount').html(textLength + lineBreaks + '/255');
+		$('#charcount').html("Pages: " + Math.ceil((textLength + lineBreaks) / 255));
 	});
 
 });
