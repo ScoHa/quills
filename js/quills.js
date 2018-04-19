@@ -38,19 +38,20 @@ function copyPaginatedText() {
 
 // Paginate entered text and paste it underneath the textarea, with appropriately-sized areas highlighted on mouseover with the ability to copy to clipboard by a click
 function paginate(text) {
-	// Divide text using substr() method
-	// Need to allow for ending a page before a word that would go over
-	// Still need to account for the incorrect /n counting, I think
-	let char = 0;
 	let para = 1;
-	//text substr from beginning of text for 254 characters
-	while (char < text.length) {
-		let textInput = text.substr(char, 255);
-		char += 255;
-		let output = "<p class='copyable' id='para" + para + "'>" + textInput + "</p>";
+	
+	// Adapted from code by 'neurotik' on StackOverflow (https://stackoverflow.com/a/7624736)
+	while (text.length > 255) {
+		var s = text.substr(0, 255);
+		var i = s.lastIndexOf(" ");
+		textOutput = text.substr(0, i);
+		let output = "<p class='copyable' id='para" + para + "'>" + textOutput + "</p>";
 		para++;
 		$('#paginated-text').append(output);
+		text = text.substr(i + 1, text.length);
 	}
+	output = "<p class='copyable' id='para" + para + "'>" + text + "</p>";
+	$('#paginated-text').append(output);
 
 	copyPaginatedText();
 }
