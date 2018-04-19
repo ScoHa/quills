@@ -31,8 +31,8 @@ function copyPaginatedText() {
 		// on click, determine which paragraph is clicked on and copy that text to the clipboard
 		var id = $(this).attr('id');
 		var idText = $('#' + id).text();
-		alert(idText)
-		// document.execCommand('copy');
+		var dummy = $('<input>').val(idText).appendTo('body').select();
+		document.execCommand('copy');
 	});
 }
 
