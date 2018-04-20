@@ -42,20 +42,23 @@ function copyPaginatedText() {
 function paginate(text) {
 	let para = 1;
 	
-	// Adapted from code by 'neurotik' on StackOverflow (https://stackoverflow.com/a/7624736)
-	while (text.length > 255) {
-		var s = text.substr(0, 255);
-		var i = s.lastIndexOf(" ");
-		textOutput = text.substr(0, i);
-		let output = "<p class='copyable' id='para" + para + "'>" + textOutput + "</p>";
-		para++;
+	if (text.length > 0) {
+		// Adapted from code by 'neurotik' on StackOverflow (https://stackoverflow.com/a/7624736)
+		while (text.length > 255) {
+			var s = text.substr(0, 255);
+			var i = s.lastIndexOf(" ");
+			textOutput = text.substr(0, i);
+			let output = "<p class='copyable' id='para" + para + "'>" + textOutput + "</p>";
+			para++;
+			$('#paginated-text').append(output);
+			text = text.substr(i + 1, text.length);
+		}
+		output = "<p class='copyable' id='para" + para + "'>" + text + "</p>";
 		$('#paginated-text').append(output);
-		text = text.substr(i + 1, text.length);
-	}
-	output = "<p class='copyable' id='para" + para + "'>" + text + "</p>";
-	$('#paginated-text').append(output);
 
-	copyPaginatedText();
+		copyPaginatedText();
+	}
+	
 }
 
 // Click event for submit button
