@@ -23,6 +23,7 @@ function clearTextInput() {
 		$('#text-input').select().val('');
 		$('#charcount').html('Pages: 1');
 		$('.copyable').remove();
+		$('li').remove();
 		$('input').remove();
 	});
 }
@@ -48,12 +49,12 @@ function paginate(text) {
 			var s = text.substr(0, 255);
 			var i = s.lastIndexOf(" ");
 			textOutput = text.substr(0, i);
-			let output = "<p class='copyable' id='para" + para + "'>" + textOutput + "</p>";
+			let output = "<li type='1' class='copyable' id='para" + para + "'>" + textOutput + "</li>";
 			para++;
 			$('#paginated-text').append(output);
 			text = text.substr(i + 1, text.length);
 		}
-		output = "<p class='copyable' id='para" + para + "'>" + text + "</p>";
+		output = "<li type='1' class='copyable' id='para" + para + "'>" + text + "</li>";
 		$('#paginated-text').append(output);
 
 		copyPaginatedText();
@@ -70,7 +71,7 @@ $('#submit').on('click', function(event) {
 // Character count
 $(document).ready(function() {
 	var textMax = 255;
-	$('#charcount').html('Pages: 1');
+	$('#charcount').html('Pages: 0');
 
 	$('#text-input').keyup(function() {
 		var text = $('#text-input').val();

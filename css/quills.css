@@ -25,6 +25,10 @@
 	cursor: pointer;
 }
 
+.copyable {
+	list-style-position: outside;
+}
+
 .copyable:hover {
 	font-weight: bold;
 }
