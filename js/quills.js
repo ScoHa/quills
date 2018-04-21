@@ -21,7 +21,7 @@ function clearTextInput() {
 	$('#clear').click(function() {
 		$('#text-input').focus();
 		$('#text-input').select().val('');
-		$('#charcount').html('Pages: 1');
+		$('#charcount').html('Pages: 0');
 		$('.copyable').remove();
 		$('li').remove();
 		$('input').remove();
