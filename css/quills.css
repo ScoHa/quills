@@ -26,7 +26,7 @@
 }
 
 .copyable {
-	list-style-position: outside;
+	text-indent: -1.2em;
 	white-space: pre-wrap;
 	margin-bottom: 15px;
 }
