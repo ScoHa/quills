@@ -27,6 +27,7 @@
 
 .copyable {
 	list-style-position: outside;
+	white-space: pre-wrap;
 }
 
 .copyable:hover {
